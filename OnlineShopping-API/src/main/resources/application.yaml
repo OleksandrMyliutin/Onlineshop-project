@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/onlineshopping
+    username: admin
+    password: admin
+
+  flyway:
+    url: jdbc:postgresql://localhost:5432/onlineshopping?ssl=false
+    user: admin
+    password: admin
+    locations: classpath:/db/migrations/
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: create-drop
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+  sql:
+    init:
+      mode:
